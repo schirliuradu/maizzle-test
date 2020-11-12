@@ -1,0 +1,41 @@
+<extends src="src/layouts/master.html">
+  <block name="template">
+
+    <table class="w-full max-w-600 m-auto">
+      <tr>
+        <th>
+
+          <if condition="apiData">
+            <if condition="apiData.itemsList && apiData.itemsList.length > 0">
+
+              <table>
+
+                <each loop="item, key in apiData.itemsList">
+                  <tr>
+                    <th>
+                      {{ item.title }}
+                    </th>
+                  </tr>
+                  <tr>
+                    <th>
+                      {{ item.text }}
+                    </th>
+                  </tr>
+
+                  <if condition="item.features && item.features.length > 0">
+                    
+                  </if>
+
+                </each>
+
+              </table>
+
+            </if>
+          </if>
+
+        </th>
+      </tr>
+    </table>
+
+  </block>
+</extends>
